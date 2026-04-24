@@ -1,4 +1,4 @@
-import { lazy, Profiler, Suspense, useState } from "react";
+import React, { lazy, Profiler, Suspense, useState } from "react";
 import "./App.css";
 import Lifecycle from "./components/ClassLifecycle/Lifecycle";
 import CoreHooks from "./components/CoreHooks/CoreHooks";
