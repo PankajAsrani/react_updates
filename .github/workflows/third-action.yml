@@ -1,0 +1,20 @@
+name: Third Action
+on:
+  pull_request:
+    types: 
+      - opened
+  workflow_dispatch:    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v6
+      - name: Install dependencies
+        run: npm ci
+      - name: Test app
+        run: npm run test
+      - name: Build app
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying..."
