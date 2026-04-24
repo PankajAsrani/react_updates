@@ -15,4 +15,19 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test:run -- src/App.test.jsx
-
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v6
+      - name: Nodejs Install
+        uses: actions/setup-node@v6
+        with: 
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build app
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploying..."
