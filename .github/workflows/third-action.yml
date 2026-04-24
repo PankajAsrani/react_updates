@@ -3,7 +3,18 @@ on:
   pull_request:
     types: 
       - opened
+    branches:
+      - main
+      - 'dev-*' # any charachter other than slashes Ex: dev-my-feature
+      - 'feat/**' # any character with slashes Ex: feat/hobby/kitchen
   workflow_dispatch:    
+  push:
+    branches:
+      - main
+      - 'dev-*' # any charachter other than slashes Ex: dev-my-feature
+      - 'feat/**' # any character with slashes Ex: feat/hobby/kitchen
+    paths-ignore: #
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
