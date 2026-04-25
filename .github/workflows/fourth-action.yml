@@ -5,6 +5,7 @@ on:
       - main
 env:
   REACT_HEADING: My App
+  REACT_TEST_2: ${{secrets.REACT_TEST}}
 jobs:
   test:
     env:
@@ -65,4 +66,7 @@ jobs:
       - name: Output filename
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
-        run: echo "Deploying... $REACT_HEADING ${{ env.REACT_HEADING}}"
+        run: |
+          echo "Deploying... $REACT_HEADING ${{ env.REACT_HEADING}}"
+          echo "Env from Github Secret $REACT_TEST "
+          echo "Env from Github Secret $REACT_TEST_2 "
