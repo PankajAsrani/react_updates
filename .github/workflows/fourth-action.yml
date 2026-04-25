@@ -50,6 +50,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Load and cache dep
         uses: ./.github/actions/cache-deps
+        with:
+          caching: 'false'
       - name: Build app
         run: npm run build
       - name: Publish js filename
