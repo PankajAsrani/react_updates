@@ -82,6 +82,9 @@ jobs:
           echo "Deploying... $REACT_HEADING ${{ env.REACT_HEADING}}"
           echo "Env from Github Secret $REACT_TEST " #this will not work
           echo "Env from Github Secret $REACT_TEST_2 "
+  deploy2:
+    needs: build
+    uses: ./.github/workflows/reusable-sixth.yml
   report:
     needs: test
     if: failure()
