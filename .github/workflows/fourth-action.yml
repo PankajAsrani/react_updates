@@ -85,6 +85,8 @@ jobs:
   deploy2:
     needs: build
     uses: ./.github/workflows/reusable-sixth.yml
+    with:
+      artifact-name: dist-files
   report:
     needs: test
     if: failure()
