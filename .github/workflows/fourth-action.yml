@@ -89,6 +89,12 @@ jobs:
       artifact-name: dist-files
     secrets:
       some-secrets: ${{secrets.REACT_TEST}}
+  print-deploy-result:
+    needs: deploy2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print deploy putput
+        run: echo " ${{needs.deploy2.outputs.result}}"
   report:
     needs: test
     if: failure()
