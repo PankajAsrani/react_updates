@@ -6,8 +6,20 @@ on:
 env:
   REACT_HEADING: My App
   REACT_TEST_2: ${{secrets.REACT_TEST}}
+  # MONGODB_PROTOCOLO: mongodb
+  # MONGODB_ADDRESS: mongodb
+  # MONGODB_USER: root
+  # MONGODB_PASSWROD: example
 jobs:
   test:
+    # container:
+    #   image: node:24
+    # services:
+    #   mongodb:
+    #     image: mongo
+    #     env:
+    #       MONGO_INITDB_ROOT_USERNAME: root 
+    #       MONGO_INITDB_ROOT_PASSWORD: example
     env:
       REACT_SUBHEADING: Subheading
     runs-on: ubuntu-latest
