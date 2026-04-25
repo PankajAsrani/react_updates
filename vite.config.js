@@ -8,5 +8,7 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/test/setup.js",
+    reporters:['json'],
+    outputFile: 'test.json'
   },
 })

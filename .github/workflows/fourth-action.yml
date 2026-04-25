@@ -25,6 +25,12 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
+      - name: Upload artifact
+        # if: 
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: test-report
+          path: test.json
   build:
     runs-on: ubuntu-latest
     needs: test
@@ -68,5 +74,5 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying... $REACT_HEADING ${{ env.REACT_HEADING}}"
-          echo "Env from Github Secret $REACT_TEST "
+          echo "Env from Github Secret $REACT_TEST " #this will not work
           echo "Env from Github Secret $REACT_TEST_2 "
