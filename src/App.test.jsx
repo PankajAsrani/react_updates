@@ -43,7 +43,7 @@ describe("App", () => {
     expect(screen.getByText("Core Hooks Mock")).toBeInTheDocument();
     expect(screen.getByText("Lifecycle Mock")).toBeInTheDocument();
     expect(await screen.findByText("RenderProps : mock data")).toBeInTheDocument();
-    expect(screen.getByText("1")).not.toBeInTheDocument();
+    expect(screen.getByText("1")).toBeInTheDocument();
     expect(screen.getByText("2")).toBeInTheDocument();
     expect(screen.getByText("Sync External Store Mock")).toBeInTheDocument();
     expect(screen.getByText("Activity Mock")).toBeInTheDocument();
