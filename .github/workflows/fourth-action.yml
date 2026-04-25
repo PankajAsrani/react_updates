@@ -3,8 +3,12 @@ on:
   push:
     branches:
       - main
+env:
+  REACT_HEADING: My App
 jobs:
   test:
+    env:
+      REACT_SUBHEADING: Subheading
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -61,4 +65,4 @@ jobs:
       - name: Output filename
         run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
-        run: echo "Deploying..."
+        run: echo "Deploying... $REACT_HEADING ${{ env.REACT_HEADING}}"
