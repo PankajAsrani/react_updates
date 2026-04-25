@@ -87,6 +87,8 @@ jobs:
     uses: ./.github/workflows/reusable-sixth.yml
     with:
       artifact-name: dist-files
+    secrets:
+      some-secrets: ${{secrets.REACT_TEST}}
   report:
     needs: test
     if: failure()
