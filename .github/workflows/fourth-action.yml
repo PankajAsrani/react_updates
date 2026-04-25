@@ -49,9 +49,12 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v6
       - name: Load and cache dep
+        id: cache-deps
         uses: ./.github/actions/cache-deps
         with:
           caching: 'false'
+      - name: Output Information
+        run:  echo ' cache used ${{steps.cache-deps.outputs.used_cache}}'
       - name: Build app
         run: npm run build
       - name: Publish js filename
